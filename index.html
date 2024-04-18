@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tensor Multiplication with TensorFlow.js</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col">
+                <h1 class="text-center">Tensor Multiplication with TensorFlow.js</h1>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Tensor 1</th>
+                            <th>Tensor 2</th>
+                            <th>Resultado</th>
+                        </tr>
+                    </thead>
+                    <tbody id="output"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+<!-- TensorFlow.js -->
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.14.0"></script>
+
+<script>
+    // Mostrar información sobre la memoria
+    function logMemoryUsage(message) {
+    const memoryInfo = tf.memory();
+    console.log(message, memoryInfo.numBytes / (1024 * 1024), 'MB');
+    }
+    // Importar TensorFlow.js
+
+// Función para crear un tensor aleatorio de 10x10
+function crearTensorAleatorio() {
+    // Generar un tensor aleatorio de 10x10 con números enteros del 1 al 9
+    const tensor = tf.randomUniform([10, 10], 1, 10, 'int32');
+    return tensor;
+}
+
+// Llamar a la función para crear el tensor aleatorio
+const tensorAleatorio = crearTensorAleatorio();
+
+// Imprimir el tensor aleatorio
+tensorAleatorio.print();
+       
+    </script>
+</body>
+</html>
